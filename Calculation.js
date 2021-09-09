@@ -9,14 +9,13 @@ const calculator = {
 const calclear = {};
 Object.assign(calclear, calculator); //for future purposes (all-clear functionality)
 
-const inputdigit = (digit) => {
+const inputdigit = (digit) => {               
   let { display, operand2 } = calculator;
 
   if (operand2 === true) {
     calculator.display = digit;
     calculator.operand2 = false;
-  } 
-  else {
+  } else {
     calculator.display = display === "0" ? digit : display + digit;
   }
   console.log(calculator);
@@ -48,7 +47,7 @@ const operator1 = (operator11) => {
     console.log(calculator.operand1);
   }
 
-  if (operator == "+" || "-" || "*" || "/" ) {
+  if (operator == "+" || "-" || "*" || "/") {
     calculator.display += operator11;
     const result = calculation(operand1, value1, operator);
     const properresult = parseFloat(result.toFixed(3));
@@ -57,58 +56,54 @@ const operator1 = (operator11) => {
     console.log(calculator);
   }
 
- 
   calculator.operand2 = true;
   calculator.operator = operator11;
   console.log(calculator);
 };
-
 
 const specops = (operator11) => {
   const { operand1, display, operator } = calculator;
   let value1 = parseFloat(display);
   console.log(value1);
 
-if (operand1 === null && !isNaN(value1)) {
+  if (operand1 === null && !isNaN(value1)) {
     calculator.operand1 = value1;
     console.log(calculator.operand1);
-}
-calculator.operand1 = value1
-  
-if (operator && !calculator.operand2) {
+  }
+  calculator.operand1 = value1;
+
+  if (operator && !calculator.operand2) {
     calculator.operator = operator11;
     console.log(calculator);
     return;
   }
- 
-  if(operator == "x^2"|| "root(x)"|| "1/x" ){
-    const result= calculation2(value1,operator11);
-    //const properresult = parseFloat(result.toFixed(3));
-    calculator.display = String(result);
-    calculator.operand1 = result;
-  }
 
+  if (operator == "x^2" || "root(x)" || "1/x") {
+    const result = calculation2(value1, operator11);
+    const properresult = parseFloat(result.toFixed(3));
+    calculator.display = properresult;
+    calculator.operand1 = properresult;
+  }
 
   calculator.operand2 = false;
-calculator.operator = operator11; 
-
-}
+  calculator.operator = operator11;
+};
 
 const calculation2 = (operand1, operator11) => {
-  if(operator11 == "x^2"){
-    console.log(operand1, operator11)
-    console.log(Math.pow(operand1, 2))
+  if (operator11 == "x^2") {
+    console.log(operand1, operator11);
+    console.log(Math.pow(operand1, 2));
     return Math.pow(operand1, 2);
   }
-  if(operator11 == "root(x)"){
-    console.log(Math.sqrt(operand1))
+  if (operator11 == "root(x)") {
+    console.log(Math.sqrt(operand1));
     return Math.sqrt(operand1);
   }
-  if(operator11 == "1/x"){
-    console.log((1 / operand1))
-    return (1 / operand1);
+  if (operator11 == "1/x") {
+    console.log(1 / operand1);
+    return 1 / operand1;
   }
-}
+};
 
 const calculation = (operand1, operand22, operator) => {
   if (operator == "+") {
@@ -141,8 +136,6 @@ const Displayupdate = () => {
   disp.value = calculator.display;
 };
 
-
-
 const keys = document.querySelector(".keys");
 keys.addEventListener("click", (event) => {
   const tget = event.target;
@@ -164,7 +157,7 @@ keys.addEventListener("click", (event) => {
     Displayupdate();
     return;
   }
-  if(tget.classList.contains("specops")){
+  if (tget.classList.contains("specops")) {
     specops(tget.value);
     Displayupdate();
     return;
@@ -174,7 +167,6 @@ keys.addEventListener("click", (event) => {
     Displayupdate();
     return;
   }
- 
 
   inputdigit(tget.value);
   Displayupdate();

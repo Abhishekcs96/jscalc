@@ -1,8 +1,9 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    height: 700px;
+    background-color: #a78e8e;
 }
-
 *,
 *::before,
 *::after {
@@ -11,56 +12,75 @@ html {
     box-sizing: inherit;
 }
 
-
+header{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: linear-gradient(-56%, 60%, 0.6);
+    background-color: rgb(40, 43, 44);
+    opacity: 0.7;
+    font-size: 2.5rem;
+    color: rgb(243, 233, 220);
+}
+.footer1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 100%;
+    align-items: center;
+    
+}
 .calculator {
     display: flex;
     flex-direction: column;
     justify-items: space-between;
     align-items: center;
     position: absolute;
+    width: auto;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid rgb(248, 209, 209);
+    border: 3px solid rgb(51, 51, 51);
     border-radius: 5px;
-
 }
-
 .screen {
     width: 100%;
     font-size: 5rem;
     height: 80px;
     border: none;
-    background-color: #6d5656;
-    color: #fff;
+    background-color: #e9dddd;
+    color: #000;
     text-align: right;
     padding-right: 20px;
     padding-left: 10px;
+    border: 7px solid rgb(51, 51, 51);
+    border-radius: 5px;
 }
-
 .keys {
     display: flex;
     flex-direction: column;
     align-items: initial;
     width: 100%;
+    background-color: #3f3e3e;
 }
-
-
-
 .operators,
 .button1,
 .button2,
 .button3,
 .extras {
     display: flex;
-    
-    
     height: 60px;
     margin: 10px;
 }
-
 .operator,
 button {
+    color: #e9dddd;
     display: flex;
     flex: 1 25%;
     border: 1px solid rgb(248, 209, 209);
@@ -70,9 +90,14 @@ button {
     margin: 10px;
     justify-content: center;
     align-items: center;
-    
+    font-size: 2.5rem;
 }
-
-#special{
-    height: 0px;
+.operator:hover,
+button:hover {
+    background-color: rgba(128, 128, 128, 0.6);
+}
+@media only screen and (min-width:750px) {
+    .calculator{
+        max-width: 400px;
+    }
 }

@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-   <!--<link rel="stylesheet" href="./template.css" /> -->
-   <link rel="stylesheet" href="./index.css"/>
+    <title>Javascript Calculator</title>
+    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   </head>
 
   <body>
+    <header>Javascript calculator for simple calculations!</header>
+
     <div class="calculator">
       <input type="text" class="screen" value="0" disabled />
 
@@ -24,29 +26,40 @@
           <button type="button" value="7">7</button>
           <button type="button" value="8">8</button>
           <button type="button" value="9">9</button>
-          <button type="button" class="specops" value="x^2">&#8339;&#8322;</button>
+          <button type="button" class="specops" value="x^2">
+            &#8339;&#8322;
+          </button>
         </div>
         <div class="button2">
           <button type="button" value="4">4</button>
           <button type="button" value="5">5</button>
           <button type="button" value="6">6</button>
-          <button type="button" class="specops"  value="root(x)">&#8730;</button>
+          <button type="button" class="specops" value="root(x)">&#8730;</button>
         </div>
         <div class="button3">
           <button type="button" value="1">1</button>
           <button type="button" value="2">2</button>
           <button type="button" value="3">3</button>
-          <button type="button" class="specops" value="1/x">&sup1;&#8725;&#8339;</button>
+          <button type="button" class="specops" value="1/x">
+            &sup1;&#8725;&#8339;
+          </button>
         </div>
         <div class="extras">
           <button type="button" value="0">0</button>
           <button type="button" class="decimal" value=".">.</button>
           <button type="button" class="all-clear" value="all-clear">AC</button>
-          <button type="button" class="operator" id="special" value="=">=</button>
-          
+          <button type="button" class="operator" id="special" value="=">
+            =
+          </button>
         </div>
       </div>
     </div>
+
     <script src="Calculation.js"></script>
+    <div class="footer1">
+      <footer class="footer">Made By Abhishek Chandra sekar
+        <a href="https://github.com/Abhishekcs96">My GitHub</a>
+      </footer>
+    </div>
   </body>
 </html>
